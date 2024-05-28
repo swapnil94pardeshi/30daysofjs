@@ -1,4 +1,4 @@
-//Declare a variable named challenge and assign it to an initial value '30 Days Of JavaScript'.
+/* //Declare a variable named challenge and assign it to an initial value '30 Days Of JavaScript'.
 
 let challenge='             30 Days Of Javascript'
 
@@ -110,3 +110,161 @@ console.log(a.concat(b))
 //Use repeat() method to print 30 Days Of JavaScript 2 times
 
 console.log(challenge1.repeat(2))
+
+//The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another.
+
+console.log("The quote \'There is no exercise better for the heart than reaching down and lifting people up.\' by John Holmes teaches us to help one another")
+
+
+//Using console.log() print out the following quote by Mother Teresa:"Love is not patronizing and charity isn't about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead."
+
+console.log("Love is not patronizing and charity isn\'t about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead.")
+
+
+//Check if typeof '10' is exactly equal to 10. If not make it exactly equal.
+
+ab='10'
+ba=10
+
+if (typeof(ab) == typeof(ba)){
+    console.log("fine")
+}
+else{
+    console.log(typeof(ab))
+    console.log(typeof(ba))
+
+    ab=parseInt(ab)
+
+    console.log(typeof(ab))
+}
+
+//Check if parseFloat('9.8') is equal to 10 if not make it exactly equal with 10.
+abc=parseFloat("9.8")
+if ( abc== 10){
+    console.log("fine")
+}
+else {
+    abc=Math.ceil(abc)
+    console.log(abc)
+}
+
+//Check if 'on' is found in both python and jargon
+let str1="python"
+let str2="jargaon"
+let contain=str1.includes("on")
+let contain1=str2.includes("on")
+if(contain && contain1){
+    console.log("found")
+}
+else{
+    console.log("not found")
+}
+
+//I hope this course is not full of jargon. Check if jargon is in the sentence.
+
+let sentence1="I hope this course is not full of jargon"
+
+if (sentence1.includes("jargon")){
+    console.log("fine")
+}
+else{
+    console.log("not found")
+}
+
+//Generate a random number between 0 and 100 inclusively.
+
+let num= Math.ceil(Math.random() * 100)
+
+console.log(num)
+
+//Generate a random number between 50 and 100 inclusively.
+
+let min = 50;
+let max = 100;
+let randomNumber = Math.ceil(Math.random() * (max - min) + min);
+console.log(randomNumber); // Example output: 9.123456789
+
+//Generate a random number between 0 and 255 inclusively.
+
+let min =0
+let max=255
+
+let randomnumber= Math.ceil(Math.random() * (max-min+1)+ min)
+console.log(randomnumber)
+
+//Access the 'JavaScript' string characters using a random number.
+
+let str='Javascript'
+let len=str.length
+
+let randomNumber=Math.floor(Math.random()*len)
+
+let randomchar=str[randomNumber]
+console.log(randomchar)
+
+//Use console.log() and escape characters to print the following pattern.
+//1 1 1 1 1
+//2 1 2 4 8
+//3 1 3 9 27
+//4 1 4 16 64
+//5 1 5 25 125
+
+console.log(" 1 1 1 1 1 \n 2 1 2 4 8 \n 3 1 3 9 27 \n 4 1 4 16 64 \n 5 1 5 25 125")
+
+
+//Use substr to slice out the phrase because because because from the following sentence:
+
+let str='You cannot end a sentence with because because because is a conjunction'
+let ind=str.lastIndexOf('because')
+let sub= str.substring(ind,)
+console.log(sub)
+
+//'Love is the best thing in this world. Some found their love and some are still looking for their love.' Count the number of word love in this sentence.
+
+let str='Love is the best thing in this world. Some found their love and some are still looking for their love.'
+let loveCount = 0
+str=str.toLowerCase()
+strar=str.split(" ")
+
+console.log(strar)
+
+for (const word of strar) {
+    if (word === "love"){
+        loveCount ++;
+    }
+}
+console.log(loveCount)
+
+
+//Use match() to count the number of all because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+
+sentence='You cannot end a sentence with because because because is a conjunction'
+
+let patternTwo = /because/gi
+
+const cw= sentence.match(patternTwo)
+lenght=cw.length
+console.log(lenght)
+
+
+//Clean the following text and find the most frequent word (hint, use replace and regular expressions).
+const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching'
+
+const cleanedText = sentence.replace(/[^a-zA-Z0-9\s]/g, '');
+*/
+
+//Calculate the total annual income of the person by extracting the numbers from the following text. 
+
+sentence= 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+
+earn= sentence.match(/\d+/g)
+intearn=[]
+let totalincome=0
+for (const word of earn){
+    intearn.push(parseInt(word))
+}
+
+for (const income of intearn){
+    totalincome += income
+}
+console.log(totalincome)
