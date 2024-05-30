@@ -224,7 +224,7 @@ for(i=0;i<=5;i++){
     unique_numbers.add(Math.floor(Math.random()*(100-1+1)+1))
 }
 console.log(unique_numbers)
-*/
+
 
 
 //Develop a small script which generate a six characters random id:
@@ -236,3 +236,177 @@ let id = ""
     id += characters.charAt(randomIndex);
   }
 console.log(id)
+
+
+//Develop a small script which generate any number of characters random id:
+let numbers=Math.floor(Math.random()*(20-1+1))+1
+const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+let id=''
+for(i=0;i<numbers;i++){
+    const randomIndex = Math.floor(Math.random() * characters.length)
+    id += characters.charAt(randomIndex);
+}
+
+console.log(id)
+
+
+//Write a script which generates a random hexadecimal number.
+const character='0123456789ABCDEF'
+let id=''
+for(i=0;i<6;i++){
+    const randomindex=Math.floor(Math.random()*character.length)
+    id+=character.charAt(randomindex)
+}
+console.log(id)
+
+
+//Write a script which generates a random rgb color number.
+let rgb=[]
+for(i=0;i<3;i++){
+    rgb.push(Math.floor(Math.random()*(255-1+1))+1)
+}
+console.log(rgb)
+
+
+//
+//Using the above countries array, create the following new array.
+countries1=[]
+for(i=0;i<countries.length;i++){
+    countries1.push(countries[i])
+}
+console.log(countries1)
+
+
+//Using the above countries array, create an array for countries length'.
+countrieslength=[]
+for(i=0;i<countries.length;i++){
+    countrieslength.push(countries[i].length)
+}
+
+console.log(countrieslength)
+
+
+//Use the countries array to create the following array of arrays:
+
+countries1=[]
+for(i=0;i<countries.length;i++){
+    countries1.push([countries[i],countries[i].split("",3).join('').toUpperCase(),countries[i].length])
+}
+
+console.log(countries1)
+
+
+//In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
+contrieswithland=[]
+for(i=0;i<countries.length;i++){
+    if(countries[i].includes('land')){
+        contrieswithland.push(countries[i])
+    }
+}
+console.log(contrieswithland)
+
+//In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
+
+contrieswithland=[]
+for(i=0;i<countries.length;i++){
+    if(countries[i].includes('ia')){
+        contrieswithland.push(countries[i])
+    }
+}
+console.log(contrieswithland)
+
+
+//Using the above countries array, find the country containing the biggest number of characters.
+
+let longestCountry = "";
+let maxLength = 0;
+
+  // Iterate through each country in the array
+for(const country of countries) {
+    // Check if the current country's length is greater than the current longest
+    if (country.length > maxLength) {
+      longestCountry = country;
+      maxLength = country.length;
+    }
+}
+console.log(longestCountry)
+
+
+//Using the above countries array, find the country containing only 5 characters.
+
+let longestCountry = [];
+let maxLength = 5;
+for(const country of countries) {
+    // Check if the current country's length is greater than the current longest
+    if (country.length == maxLength) {
+      longestCountry.push(country)
+    }
+}
+
+console.log(longestCountry)
+
+
+//Find the longest word in the webTechs array
+
+let largesttech = '';
+let maxLength = 0;
+
+for(const tech of webTechs){
+    if(tech.length >maxLength){
+        largesttech=tech
+        maxLength=tech.length
+    }
+}
+console.log(largesttech)
+
+
+//Use the webTechs array to create the following array of arrays:
+newwebtech=[]
+for(const tech of webTechs){
+    newwebtech.push([tech,tech.length])
+}
+
+console.log(newwebtech)
+
+
+//An application created using MongoDB, Express, React and Node is called a MERN stack app. Create the acronym MERN by using the array mernStack
+stackarr=[]
+for(i=0;i<mernStack.length;i++){
+    stackarr.push(mernStack[i].split("",1).join('').toUpperCase())
+}
+console.log(stackarr.join(''))
+
+
+//Iterate through the array, ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"] using a for loop or for of loop and print out the items.
+
+techs=["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"] 
+
+for(const tech of techs){
+    console.log(tech)
+}
+
+
+//This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
+fruit=['banana', 'orange', 'mango', 'lemon']
+reversefruit=[]
+for(i=fruit.length-1;i>=0;i--){
+    reversefruit.push(fruit[i])
+}
+
+console.log(reversefruit)
+
+*/
+
+//Print all the elements of array as shown below.
+
+const fullStack = [
+    ['HTML', 'CSS', 'JS', 'React'],
+    ['Node', 'Express', 'MongoDB']
+]
+
+for (i=0;i<fullStack.length;i++){
+    const stack = fullStack[i]
+    for(j=0;j<stack.length;j++){
+        console.log(stack[j])
+    }
+}
