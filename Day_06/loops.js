@@ -395,7 +395,7 @@ for(i=fruit.length-1;i>=0;i--){
 
 console.log(reversefruit)
 
-*/
+
 
 //Print all the elements of array as shown below.
 
@@ -410,3 +410,71 @@ for (i=0;i<fullStack.length;i++){
         console.log(stack[j])
     }
 }
+
+
+//Copy countries array(Avoid mutation)
+
+copiedcountries=countries.slice()
+console.log(copiedcountries)
+
+
+//Arrays are mutable. Create a copy of array which does not modify the original. Sort the copied array and store in a variable sortedCountries
+
+copiedcountries=countries.slice()
+sortedCountries= copiedcountries.sort()
+console.log(sortedCountries)
+
+
+//Sort the webTechs array and mernStack array
+
+sortedwebtech=webTechs.sort()
+sortedmernstack=mernStack.sort()
+console.log(sortedmernstack,sortedwebtech)
+
+
+//Extract all the countries contain the word 'land' from the countries array and print it as array
+
+newcountries=[]
+for(const country of countries){
+    if(country.includes('land')){
+        newcountries.push(country)
+    }
+}
+console.log(newcountries)
+
+//Find the country containing the hightest number of characters in the countries array
+
+highestcharcountry=''
+maxcharacter=0
+for(i=0;i<countries.length;i++){
+    if(countries[i].length>maxcharacter){
+        highestcharcountry=countries[i]
+        maxcharacter=countries[i].length
+    }
+}
+
+console.log(highestcharcountry)
+console.log(countries)
+
+
+//Extract all the countries containing only four characters from the countries array and print it as array
+
+fourcharcountries=[]
+for(i=0;i<countries.length;i++){
+    if(countries[i].length == 4){
+        fourcharcountries.push(countries[i])
+    }
+}
+console.log(fourcharcountries)
+
+
+//Reverse the countries array and capitalize each country and stored it as an array
+
+reversecapitalizearraycountries=[]
+
+for(i=countries.length-1;i>0;i--){
+    reversecapitalizearraycountries.push(countries[i].toUpperCase())
+}
+console.log(reversecapitalizearraycountries)
+*/
+
