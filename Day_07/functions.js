@@ -530,7 +530,200 @@ function rgbcolorgenerator(num){
 
 console.log(rgbcolorgenerator(3))
 
-*/
+
 
 //Write a function convertHexaToRgb which converts hexa color to rgb and it returns an rgb color.
+hexcolor="#ff1005"
 
+
+function converthexatorgb(hexcolor){
+    let colorrgb=[]
+    hexcolor=hexcolor.replace(/^#/,'')
+    for (let i = 0; i < hexcolor.length; i += 2) {
+        const colorPart = hexcolor.slice(i, i + 2)
+        colorrgb.push(parseInt(colorPart,16))
+}
+return colorrgb
+}
+
+rgbcolorcode=converthexatorgb("#ff1005")
+console.log(rgbcolorcode)
+
+//Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
+
+function convertrgbtohexa(rgbcolorcode){
+    let hexcolor1=''
+    for(i=0;i<rgbcolorcode.length;i++){
+        hexcolor1 += rgbcolorcode[i].toString(16).padStart(2,'0')
+    }
+    return hexcolor1
+}
+
+console.log(convertrgbtohexa(rgbcolorcode))
+
+
+
+
+//Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array
+
+function shuffleArray(array) {
+  const shuffledArray = [...array];
+  let randomIndex;
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    randomIndex = Math.floor(Math.random() * (i + 1));
+
+    [shuffledArray[i], shuffledArray[randomIndex]] = [shuffledArray[randomIndex], shuffledArray[i]];
+  }
+  return shuffledArray;
+}
+
+let numbers = [1, 2, 3, 4, 5, 6, 7];
+console.log(shuffleArray(numbers));
+
+
+//Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+
+function factorial(num){
+    let facgtorialofnum=1
+    for(i=1;i<=num;i++){
+        facgtorialofnum *=i
+    }
+    return facgtorialofnum
+}
+
+console.log(factorial(5))
+
+
+
+//Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+
+function isempty(par){
+    if(par=== null || typeof(par)==='undefined'){
+        return true
+    }
+    else if(typeof(par)==='string'){
+        return par.trim()===''
+    }
+    else if(typeof(par)==='object'){
+        return Object.keys(par).length === 0
+    }
+    else{
+        throw new TypeError('unsupported data type')
+    }
+}
+
+console.log(isempty("2"))
+
+
+
+//Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+
+
+function sumofarrayitems(arra){
+    let sumall=0
+    for(i=0;i<arra.length;i++){
+        if(typeof(arra[i]) !== "number"){
+            return "array is not number"
+        }
+        else{
+            sumall += arra[i]
+        }
+    }
+    return sumall
+}
+let number=[1,2,3,4,5,'a']
+console.log(sumofarrayitems(number))
+
+
+
+//Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback
+
+
+function average(arra){
+    let sumall=0
+    for(i=0;i<arra.length;i++){
+        if(typeof(arra[i]) !== "number"){
+            return "array is not number"
+        }
+        else{
+            sumall += arra[i]
+        }
+    }
+    return sumall/arra.length
+}
+let number=[1,2,3,4,5]
+console.log(average(number))
+
+
+
+//Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
+
+function modifyarray(arra){
+    modifiedarra=[...arra]
+    if (modifiedarra.length > 5){
+        if (typeof modifiedarra[5] === 'string'){ 
+            modifiedarra[5] = modifiedarra[5].toUpperCase();
+        } 
+        else {
+            return "Element at index 5 is not a string";
+        }
+    }
+    else{
+        return "Array length less than 5: Item not found"
+    }
+    return modifiedarra
+}
+
+console.log(modifyarray(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot']))
+
+console.log(modifyarray(['Google', 'Facebook','Apple', 'Amazon']));
+
+
+
+//Write a functions which checks if all items are unique in the array.
+
+function checkunique(arra){
+    const uniqueSet = new Set(arra);
+
+    return uniqueSet.size === arra.length;
+}
+Number=[1,2,3,4,5,6,4]
+console.log(checkunique(Number))
+
+
+//Write a function which checks if all the items of the array are the same data type.
+
+function checkdatatype(arra){
+    if (!arra.length) return false
+    const dataType = typeof arra[0]
+    for(i=0;i<arra.length;i++){
+        if (typeof arra[i] !== dataType) {
+        return false;
+        }
+    }
+    return true;
+}
+
+const numbers = [1, 2, 3, 4];
+const mixedArray = [1, 2.5, "hello", true];
+
+console.log(checkdatatype(numbers))
+
+console.log(checkdatatype(mixedArray))
+*/
+
+//JavaScript variable name does not support special characters or symbols except $ or _. Write a function isValidVariable which check if a variable is valid or invalid variable.
+
+
+function isvalidvariablename(name){
+    if (!name || typeof name !== "string") {
+        return false; // Not a string or empty string
+    }
+
+  const firstCharRegex = /^[$_a-zA-Z]+$/; // Check if first character is valid
+  const restRegex = /^[$_a-zA-Z0-9]+$/; // Check for subsequent characters
+
+  return firstCharRegex.test(name[0]) && restRegex.test(name.slice(1));
+}
+
+console.log(isvalidvariablename("var-name"))
