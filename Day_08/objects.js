@@ -395,7 +395,7 @@ console.log(products)
 */
 //Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
 
-function likeProduct(id, userId, users, products) {
+/*function likeProduct(id, userId, users, products) {
   const productToLike = products.find(pr1 => pr1._id === id);
   if (!productToLike) {
     return "Invalid product id to like";
@@ -416,7 +416,7 @@ function likeProduct(id, userId, users, products) {
 
 
 console.log(likeProduct('eedfcf','ghderc',users,products));
-console.log(products);
+console.log(products);*/
 
 
 function likeProduct(productId, userId, users, products) {
